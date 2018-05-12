@@ -5,3 +5,6 @@ yarn-error.log
 
 # osx
 .DS_Store
+
+# webpack
+bundle.js
