@@ -1,7 +1,11 @@
 
 # Webpack
 
-Bundle includes source maps. We want to reduce them in production.
+Webpack is a tool for bundling javascript files into a single file, often named bundle.js. Webpack is often run from build configurations in the node package.json file. Webpack can be run with options that change the way files are bundled. These options are supplied as command line arguments and provide parameters to the webpack configuration. The configuration for webpack is specified in a configuration file that is often named webpack.config.js.
+
+By default webpack will bundle all application information into bundle file. This includes source maps that aid developers by mapping code in the bundle to its original source file. Webpack, along with external plugins, can reduce the size of the of the bundle.js file for production by moving both source maps and css styles into external files.
+
+## Configuration Types
 
 Webpack provides a number of options for exporting the configuration in the webpack.config.js file. Each option representing one of the [Webpack configuration types] is enumerated as follows:
 
@@ -12,7 +16,9 @@ Webpack provides a number of options for exporting the configuration in the webp
 
 In this document, we will discuss two configuration types, exporting a single object and function. A single object is useful for getting started with webpack, but eventually the file must disambiguate between development and production builds. Exporting a function is the way to do this.
 
-The following example shows single webapck configuration object. Configuratons are static in they can't specify different build environments based on arguments provided to the webpack command.
+### Webpack Configuration as a Single Object
+
+The following example shows single webpack configuration object. Configuratons are static in they can't specify different build environments based on arguments provided to the webpack command.
 
 ```javascript
 module.exports = {
@@ -20,6 +26,8 @@ module.exports = {
     ...
 }
 ```
+
+### Webpack Configuration as a Function
 
 In the following example, the webpack configuration is specified as a function. If we export a function we can specify the env parameter using the webpack --env option. The function below will select the type of output source-map based on the value of env.
 
@@ -38,6 +46,9 @@ Below is the webpack command setting the env string to 'production':
 ```bash
 webpack -p --env production
 ```
+## Webpack Configuration
+
+### Entry and Output
 
 The webpack configuration usually contains two important attributes, the entry and the output.
 
@@ -54,6 +65,8 @@ module.exports = {
   },
   //-------------------
 ```
+
+### Modules and Loaders
 
 Webpack modules are loadable packages used to process input files. Modules exist for processing javascript language extensions, css and scss styles, typescript, and many others. Modules are implemented as loaders which describe to webpack how to process these different types of input files.
 
@@ -83,6 +96,7 @@ The example below specifies two module rules and four loaders: babel, style, css
     }]
   },
 ```
+### Devtool and Separating Source Maps info External Files
 
   The attirbute [devtool] choses the style of [source mapping] provided. In the example below, the 'cheap-module-eval-source-map' is an inline source map and will include the source map in the bundle.js file. It does mimimum processing of the source map offering fast performance at the expense of large bundle.js files. The source-map option generates a separate source map file which can be used for debugging, but is not included
   in the bundle.js file. The resulting smaller bundle.js file can be put into production while still giving
@@ -102,7 +116,7 @@ module.export {
   }
 };
 ```
-### Writing CSS Output to a Separate File
+### Separating CSS to an External File
 
 Webpack css out can be directed to separate file using an additional plugin extract-text-webpack-plugin. The plugin provides an object that will extract the css and sccs content and output it to a separate css file. The object takes a constructor value containing the css file output name. Input is specified to the object's extract function that accepts an object containing an array of loaders to process the css and sccs output. Note that the required object does not need to use the styles-loader as it is providing that function.
 
@@ -141,6 +155,8 @@ module.exports = (env) => {
   })
 };
 ```
+
+## Example Webpack Configuration File
 
 The final [webpack.config.js] file contains the typical configuration for a multiple build environment exporting both source maps and styles to files separate from the bundle.js file.
 
