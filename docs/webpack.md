@@ -150,4 +150,4 @@ The final [webpack.config.js] file contains the typical configuration for a mult
 [Webpack Configuration Types]: https://webpack.js.org/configuration/configuration-types
 [Webpack How to Guides]: https://webpack.js.org/guides
 [devtool]: https://webpack.js.org/configuration/devtool
-[webpack.config.js] ../webpack.config.js
+[webpack.config.js] file://../webpack.config.js
