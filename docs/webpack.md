@@ -1,7 +1,7 @@
 
 # Webpack
 
-Webpack is a tool for bundling javascript files into a single file, often named bundle.js. Webpack is often run from build configurations in the node package.json file. Webpack can be run with options that change the way files are bundled. These options are supplied as command line arguments and provide parameters to the webpack configuration. The configuration for webpack is specified in a configuration file that is often named webpack.config.js.
+[Webpack] is a tool for bundling javascript files into a single file, often named bundle.js. Webpack is often run from build configurations in the node package.json file. Webpack can be run with options that change the way files are bundled. These options are supplied as command line arguments and provide parameters to the webpack configuration. The configuration for webpack is specified in a configuration file that is often named webpack.config.js.
 
 By default webpack will bundle all application information into bundle file. This includes source maps that aid developers by mapping code in the bundle to its original source file. Webpack, along with external plugins, can reduce the size of the of the bundle.js file for production by moving both source maps and css styles into external files.
 
@@ -160,8 +160,9 @@ module.exports = (env) => {
 
 The final [webpack.config.js] file contains the typical configuration for a multiple build environment exporting both source maps and styles to files separate from the bundle.js file.
 
+[Webpack]: https://webpack.js.org
 [extract-text-webpack-plugin]: https://github.com/webpack-contrib/extract-text-webpack-plugin
-[Webpack documentation website]: https://webpack.js.org
+[Webpack documentation website]: https://webpack.js.org/concepts
 [source mapping]: https://survivejs.com/webpack/building/source-maps
 [Webpack Configuration Types]: https://webpack.js.org/configuration/configuration-types
 [Webpack How to Guides]: https://webpack.js.org/guides
