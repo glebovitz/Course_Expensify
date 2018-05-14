@@ -6,7 +6,4 @@ yarn-error.log
 .DS_Store
 
 # webpack
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
+public/dist
