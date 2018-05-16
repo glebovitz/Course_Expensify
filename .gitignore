@@ -7,3 +7,7 @@ yarn-error.log
 
 # webpack
 public/dist
+
+#env
+.env.test
+.env.development
