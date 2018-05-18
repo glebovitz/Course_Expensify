@@ -66,8 +66,7 @@ test(`should setup edit expense action object`, () => {
 
 test('should update expense in firebase', (done) => {
   const store = createMockStore({});
-  const { id } = expenses[2];
-  const { createdAt, description } = expenses[2];
+  const { id, createdAt, description } = expenses[2];
   const updates = {
     amount: 123456,
     note: 'Changed Expense'
