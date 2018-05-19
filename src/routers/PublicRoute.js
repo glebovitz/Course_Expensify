@@ -11,8 +11,6 @@ export const PublicRoute = ({
   <Route {...rest} component={(props) => (
     !isAuthenticated ? (
       <div>
-        <h1>Expensify</h1>
-        <p>Press Login to log into the Expensify App</p>
         <Component {...props} />
       </div>
     ) : (
